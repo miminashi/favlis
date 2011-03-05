@@ -1,0 +1,11 @@
+source "http://rubygems.org"
+gem "sinatra"
+gem "nokogiri"
+gem "mongoid"
+gem "bson_ext"
+gem "redis"
+gem "redis-namespace"
+gem "yajl-ruby"
+gem "vegas"
+gem "resque"
+

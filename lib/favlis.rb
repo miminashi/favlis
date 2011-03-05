@@ -20,7 +20,7 @@ class Favlis
     end
 
     get '/' do
-      @statuses = Tweet.order_by(:faved_users_count.desc, :t_id.desc).limit(3)
+      @statuses = Tweet.order_by([[:faved_users_count, :desc], [:t_id, :desc]]).limit(3)
 =begin
       @statuses.each do |s|
         p s.faved_users
