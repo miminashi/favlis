@@ -10,7 +10,7 @@ namespace :crawler do
   end
 
   task :dequeue do
-    'clawler:dequeue'
+    Resque::Job.destroy(:default, 'Favlis::Jobs::Crawl')
   end
 end
 
