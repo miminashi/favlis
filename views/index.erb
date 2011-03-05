@@ -1,0 +1,27 @@
+<div class="wrap-statuses">
+  <ol class="statuses" id="timeline">
+    <% @statuses.each do |s| %>
+      <li class="status">
+      <span class="author">
+        <img src="<%= s.profile_image_url %>" />
+      </span>
+      <span class="status-bosy">
+        <span class="status-content">
+          <strong>
+            <a class="tweet-url screen-name" href="http://twitter.com/<%= s.from_user %>"><%= s.from_user %></a>
+          </strong>
+          <span class="entry-content">
+            <%#  @<a rel="nofollow" href="/udon_tan" class="tweet-url username">udon_tan</a> ごはんはん %>
+            <%= s.text %>
+          </span>
+        </span>
+        <ul>
+          <li class="faved"><%= s.faved_users_count %></li>
+          <li class="retweeted"><%= s.retweeted_users_count %></li>
+        </ul>
+      </span>
+      </li>
+    <% end %> 
+  </ol>
+</div>
+

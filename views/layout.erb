@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Favlis</title>
+  </head>
+  <body>
+    <div id="wrapall">
+
+      <div id="header">
+        <h1>favlis</h1>
+      </div><!-- header -->
+
+      <div id="contents">
+
+        <div id="main">
+          <%= yield %>
+        </div><!-- main -->
+
+        <div id="sidebar">
+          <%= render_sidebar(@statuses) %>
+        </div><!-- sidebar -->
+
+      </div><!-- contents -->
+
+      <div id="footer">
+        <span>2011 miminashi &amp; mrmayu all rights reserved.</span>
+      </div><!-- footer -->
+
+    </div><!-- wrapall -->
+  </body>
+</html>
+
