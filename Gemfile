@@ -1,4 +1,5 @@
 source "http://rubygems.org"
+gem "rake"
 gem "sinatra"
 gem "nokogiri"
 gem "mongoid"
@@ -8,4 +9,5 @@ gem "redis-namespace"
 gem "yajl-ruby"
 gem "vegas"
 gem "resque"
+gem "SystemTimer"
 

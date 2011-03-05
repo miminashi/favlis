@@ -32,12 +32,12 @@ Setup
     $ ./setup.sh
 - Manual Setup
     $ sudo gem install bundler
-    $ mkdir vendor/bundle
+    $ mkdir -p vendor/bundle
     $ bundle install --path vendor/bundle
 
 StartUP
 - Crawler
-    $ COUNT=3 VVERBOSE=true QUEUE=default rake resque:workers
+    $ COUNT=3 VVERBOSE=true QUEUE=default bundle exec rake resque:workers
     in other shell
     $ user=hogehoge rake crawler:start
 - App

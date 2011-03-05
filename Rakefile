@@ -1,3 +1,4 @@
+require 'bundler/setup'
 require 'resque/tasks'
 require 'lib/crawler'  # workerにclawlerのクラスを読み込ませるため
 
