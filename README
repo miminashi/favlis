@@ -1,2 +1,45 @@
-wait a minutes!!
+FAVLIS
+
+Description
+- make clear how meny people favorited your tweets, like favster or favotter
+
+Origin of name
+- FAVRIS is sounds good, but it's common name
+- So, put L instead R. LIS also means LIST
+- Most of Japanese can't distinguish L and R sounds in English
+
+Recommend
+- MacOS (for develop)
+  - 10.6 is best. 10.5 or sooner must be hard a little.
+- Debian Squeeze (for deploy)
+  - Lenny or sooner must be hard.
+
+Require
+- MongoDB
+  - MacOS
+      $ sudo port install mongodb
+  - Debian Squeeze
+      $ apt-get install mongodb
+- Redis
+  - MacOS
+      $ sudo port install redis
+  - Debian Squeeze
+      $ apt-get install redis-server
+
+Setup
+- Auto Setup
+    $ sudo gem install bundler
+    $ ./setup.sh
+- Manual Setup
+    $ sudo gem install bundler
+    $ mkdir vendor/bundle
+    $ bundle install --path vendor/bundle
+
+StartUP
+- Crawler
+    $ COUNT=3 VVERBOSE=true QUEUE=default rake resque:workers
+    in other shell
+    $ user=hogehoge rake crawler:start
+- App
+    $ bundle exec rackup
 
