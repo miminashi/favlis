@@ -19,7 +19,7 @@ class Tweet
   field :faved_users_count, :type => Integer
   field :retweeted_users, :type => Array, :default => []
   field :retweeted_users_count, :type => Integer
-  key :t_id
+  #key :t_id
   before_save :update_all_counts
 
   protected
@@ -36,7 +36,6 @@ class User
   include Mongoid::Document
   field :screen_name
   field :profile_image_url
-  field :last_crawl, :default => Time.at(0)
-  key :screen_name
+  field :last_crawl, :type => Time, :default => Time.at(0)
 end
 

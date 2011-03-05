@@ -4,7 +4,7 @@ require 'config/mongo_settings'
 require 'config/crawler_settings'
 require 'lib/scraper'
 
-require 'pp'
+#require 'pp'
 
 =begin
 EventMachine.run {
@@ -128,6 +128,7 @@ class Favlis
 
       def enqueue(username)
         if user = User.first(:conditions => {:screen_name => username})
+          #p user.last_crawl.class
           if Time.now - user.last_crawl > CRAWL_USER_INTERVAL
             Resque.enqueue(Favlis::Jobs::Crawl, username)
           end

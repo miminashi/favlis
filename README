@@ -39,7 +39,8 @@ StartUP
 - Crawler
     $ COUNT=3 VVERBOSE=true QUEUE=default bundle exec rake resque:workers
     in other shell
-    $ user=hogehoge rake crawler:start
+    $ user=hogehoge bundle exec rake crawler:start
+
 - App
     $ bundle exec rackup
 
