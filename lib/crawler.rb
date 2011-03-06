@@ -1,7 +1,7 @@
 require 'resque'
-require 'config/mongo_settings'
 require 'config/crawler_settings'
 require 'lib/scraper'
+require 'lib/model'
 
 class Favlis
   class Jobs

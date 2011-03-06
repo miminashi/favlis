@@ -1,10 +1,8 @@
 require 'mongoid'
-
-#MONGO_SERVER = '172.16.0.65'
-MONGO_SERVER = '127.0.0.1'
+require 'config/mongo_settings'
 
 Mongoid.configure do |conf|
-  conf.master = Mongo::Connection.new(MONGO_SERVER, 27017).db('favlis_test')
+  conf.master = Mongo::Connection.new(MONGO_SERVER, 27017).db(MONGO_DB)
 end
 
 class Tweet
@@ -29,7 +27,7 @@ class Tweet
 
     self.retweeted_users = [] unless self.retweeted_users
     self.retweeted_users_count = self.retweeted_users.size
-  end
+  end 
 end
 
 class User

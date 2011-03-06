@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require 'erb'
-require 'config/mongo_settings'
+require 'lib/model'
 
 class Favlis
   class App < Sinatra::Base
