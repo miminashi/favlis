@@ -4,13 +4,13 @@ require 'mongoid'
 MONGO_SERVER = '127.0.0.1'
 
 Mongoid.configure do |conf|
-  conf.master = Mongo::Connection.new(MONGO_SERVER, 27017).db('favlis')
+  conf.master = Mongo::Connection.new(MONGO_SERVER, 27017).db('favlis_test')
 end
 
 class Tweet
   include Mongoid::Document
   field :raw_html
-  field :t_id
+  field :t_id, :type => Integer
   field :from_user
   field :profile_image_url
   field :text
@@ -37,5 +37,6 @@ class User
   field :screen_name
   field :profile_image_url
   field :last_crawl, :type => Time, :default => Time.at(0)
+  field :last_enqueue, :type => Time, :default => Time.at(0)
 end
 
