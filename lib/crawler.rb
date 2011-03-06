@@ -55,14 +55,15 @@ class Favlis
       def insert_status(status)
         tweet = Tweet.first(:conditions => {:t_id => status[:t_id]})
         if tweet
-          p status[:t_id]
-          p @username
+          _buff = tweet.faved_users.map{|u| u}
           unless tweet.faved_users.include?(@username)
+            tweet.faved_users << @username
+            p _buff
             p tweet.faved_users
+            puts "exist #{status[:t_id]}: add #{@username}, #{_buff.size} -> #{tweet.faved_users.size}"
+          else
+            puts "exist #{status[:t_id]}: add none"
           end
-          tweet.faved_users << @username unless tweet.faved_users.include?(@username)
-          p tweet.faved_users
-          puts
         else
           tweet = Tweet.new do |t| 
             t.raw_html = status[:raw_html]
@@ -73,6 +74,7 @@ class Favlis
             t.created_at = status[:created_at]
           end
           tweet.faved_users << @username
+          puts "new #{status[:t_id]}: add #{@username}"
         end
         tweet.save
       end
