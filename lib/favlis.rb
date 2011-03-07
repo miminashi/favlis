@@ -34,6 +34,19 @@ class Favlis
       erb :search
     end
 
+    get '/search' do
+      case params[:type]
+      when 'keyword'
+        redirect '/'
+      when 'tag'
+        redirect '/'
+      when 'user'
+        redirect "/user/#{params[:query]}"
+      else
+        err_404
+      end
+    end
+
     get '/user/:user/:page' do
       if params[:page].to_i < 1
         err_404
