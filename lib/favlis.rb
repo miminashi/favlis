@@ -17,6 +17,10 @@ class Favlis
         status 404
         erb :err_404, :layout => :layout_nosidebar
       end
+
+      def profile_image_url(username)
+        return User.first(:conditions => {:screen_name => username}).profile_image_url
+      end
     end
 
     get '/' do
@@ -59,6 +63,12 @@ class Favlis
     get '/user/:user' do
       @statuses = Tweet.paginate(:conditions => {:from_user => params[:user]}, :page => 1, :per_page => 15)
       erb :user
+    end
+
+    get '/status' do
+      @tweets_count = Tweet.count
+      @users_count = User.count
+      erb :status
     end
   end
 end

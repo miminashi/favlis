@@ -25,6 +25,11 @@ Require
       $ sudo port install redis
   - Debian Squeeze
       $ apt-get install redis-server
+- Other
+  - some library builds native extention
+      $ apt-get install ruby-dev
+  - nokogiri requires
+      $ apt-get install libxslt-dev libxml2-dev
 
 Setup
 - Auto Setup

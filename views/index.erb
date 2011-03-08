@@ -40,8 +40,20 @@
                   </span>
                 </span>
                 <ul>
-                  <li class="faved"><%= s.faved_users_count %></li>
-                  <li class="retweeted"><%= s.retweeted_users_count %></li>
+                  <li class="faved">
+                  <span>
+                    <ol>
+                      <% s.faved_users.each do |u| %>
+                        <li><span><img src="<%= profile_image_url(u) %>" /></span></li>
+                      <% end %>
+                    </ol>
+                  </span>
+                  </li>
+                  <!--
+                  <li class="retweeted">
+                  <%= s.retweeted_users_count %>
+                  </li>
+                  -->
                 </ul>
               </span>
               </li>
